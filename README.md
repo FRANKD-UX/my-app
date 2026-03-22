@@ -1,5 +1,9 @@
 # MyApp
 
+[![CI](https://github.com/FRANKD-UX/my-app/actions/workflows/ci.yml/badge.svg)](https://github.com/FRANKD-UX/my-app/actions/workflows/ci.yml)
+
+Starter Angular application for learning and experimenting with core Angular concepts.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
 
 ## Development server

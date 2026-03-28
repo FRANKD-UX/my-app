@@ -1,0 +1,129 @@
+<ng-container *ngIf="course">
+  <section class="course-hero" [style.--accent]="course.accentColor">
+    <div class="course-hero__inner">
+      <a routerLink="/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        All Courses
+      </a>
+
+      <div class="course-hero__content">
+        <div class="course-hero__tags">
+          <span class="tag tag--accent">{{ course.level }}</span>
+          <span class="tag tag--neutral">{{ course.duration }}</span>
+        </div>
+        <h1 class="course-hero__title">{{ course.title }}</h1>
+        <p class="course-hero__subtitle">{{ course.subtitle }}</p>
+        <p class="course-hero__description">{{ course.description }}</p>
+
+        <div class="course-hero__cert">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {{ course.certification }}
+        </div>
+
+        <a routerLink="/contact" class="btn btn--primary btn--lg" style="margin-top: 28px; display: inline-flex;">
+          Enrol for This Course
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="course-body">
+    <div class="container course-body__grid">
+      <main class="course-main">
+        <section class="content-block">
+          <h2 class="content-block__title">Course Modules</h2>
+          <p class="content-block__lead">This course is structured into {{ course.modules.length }} focused modules, combining theory with hands-on practical application.</p>
+
+          <div class="module-list">
+            <div
+              class="module-item"
+              *ngFor="let module of course.modules; let i = index"
+              [class.module-item--active]="activeModuleIndex === i"
+              (click)="setActiveModule(i)">
+              <div class="module-item__header">
+                <div class="module-item__number">{{ i + 1 < 10 ? '0' + (i + 1) : (i + 1) }}</div>
+                <div class="module-item__info">
+                  <h3>{{ module.title }}</h3>
+                  <span class="module-item__duration">{{ module.duration }}</span>
+                </div>
+                <svg class="module-item__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </div>
+              <div class="module-item__body" *ngIf="activeModuleIndex === i">
+                <p>{{ module.description }}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-block">
+          <h2 class="content-block__title">Learning Outcomes</h2>
+          <p class="content-block__lead">Upon successful completion, delegates will be able to:</p>
+
+          <ul class="outcomes-list">
+            <li *ngFor="let outcome of course.outcomes">
+              <span class="outcomes-list__icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              {{ outcome }}
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <aside class="course-sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-card__title">Course Details</h3>
+          <ul class="sidebar-card__details">
+            <li>
+              <span class="label">Duration</span>
+              <span class="value">{{ course.duration }}</span>
+            </li>
+            <li>
+              <span class="label">Level</span>
+              <span class="value">{{ course.level }}</span>
+            </li>
+            <li>
+              <span class="label">Certificate</span>
+              <span class="value">{{ course.certification }}</span>
+            </li>
+            <li>
+              <span class="label">Modules</span>
+              <span class="value">{{ course.modules.length }} modules</span>
+            </li>
+          </ul>
+          <a routerLink="/contact" class="btn btn--primary" style="width: 100%; text-align: center; justify-content: center;">
+            Book This Course
+          </a>
+        </div>
+
+        <div class="sidebar-card sidebar-card--alt">
+          <h3 class="sidebar-card__title">Prerequisites</h3>
+          <ul class="prereq-list">
+            <li *ngFor="let prereq of course.prerequisites">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              {{ prereq }}
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card sidebar-card--cta">
+          <p>Need on-site training or a group booking?</p>
+          <a routerLink="/contact" class="btn btn--outline" style="width: 100%; text-align: center; justify-content: center;">
+            Contact Us
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</ng-container>
+

@@ -1,0 +1,147 @@
+<div class="contact-page">
+  <section class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">Get in Touch</p>
+      <h1 class="page-header__title">Request a Training Quote</h1>
+      <p class="page-header__subtitle">Fill in the form below and one of our training coordinators will get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container contact-grid">
+      <div class="form-wrapper">
+        <div class="success-message" *ngIf="isSubmitted">
+          <div class="success-message__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h2>Email Draft Opened</h2>
+          <p>Your default mail app should now open with this enquiry pre-filled and addressed to info&#64;njcfirecontrol.co.za. If it did not, you can email us directly using the contact details on this page.</p>
+          <a routerLink="/" class="btn btn--primary">Back to Home</a>
+        </div>
+
+        <form class="enquiry-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!isSubmitted" novalidate>
+          <h2 class="form-title">Training Enquiry</h2>
+
+          <div class="form-row">
+            <div class="form-group" [class.form-group--error]="f['fullName'].invalid && f['fullName'].touched">
+              <label for="fullName">Full Name *</label>
+              <input id="fullName" type="text" formControlName="fullName" placeholder="Your full name">
+              <span class="error-msg" *ngIf="f['fullName'].hasError('required') && f['fullName'].touched">Full name is required.</span>
+            </div>
+            <div class="form-group" [class.form-group--error]="f['company'].invalid && f['company'].touched">
+              <label for="company">Company *</label>
+              <input id="company" type="text" formControlName="company" placeholder="Company or organisation name">
+              <span class="error-msg" *ngIf="f['company'].hasError('required') && f['company'].touched">Company name is required.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" [class.form-group--error]="f['email'].invalid && f['email'].touched">
+              <label for="email">Email Address *</label>
+              <input id="email" type="email" formControlName="email" placeholder="you@company.co.za">
+              <span class="error-msg" *ngIf="f['email'].hasError('required') && f['email'].touched">Email is required.</span>
+              <span class="error-msg" *ngIf="f['email'].hasError('email') && f['email'].touched">Please enter a valid email address.</span>
+            </div>
+            <div class="form-group" [class.form-group--error]="f['phone'].invalid && f['phone'].touched">
+              <label for="phone">Phone Number *</label>
+              <input id="phone" type="tel" formControlName="phone" placeholder="011 000 0000">
+              <span class="error-msg" *ngIf="f['phone'].hasError('required') && f['phone'].touched">Phone number is required.</span>
+              <span class="error-msg" *ngIf="f['phone'].hasError('pattern') && f['phone'].touched">Please enter a valid phone number.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" [class.form-group--error]="f['course'].invalid && f['course'].touched">
+              <label for="course">Course of Interest *</label>
+              <select id="course" formControlName="course">
+                <option value="" disabled selected>Select a course...</option>
+                <option *ngFor="let option of courseOptions" [value]="option.value">{{ option.label }}</option>
+              </select>
+              <span class="error-msg" *ngIf="f['course'].hasError('required') && f['course'].touched">Please select a course.</span>
+            </div>
+            <div class="form-group" [class.form-group--error]="f['delegates'].invalid && f['delegates'].touched">
+              <label for="delegates">Number of Delegates *</label>
+              <input id="delegates" type="number" formControlName="delegates" placeholder="e.g. 12" min="1">
+              <span class="error-msg" *ngIf="f['delegates'].touched && f['delegates'].invalid">Please enter a valid number of delegates.</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Information</label>
+            <textarea id="message" formControlName="message" rows="4" placeholder="Tell us about specific requirements, preferred training dates, or any other details..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--full" [disabled]="isSubmitting">
+            <span *ngIf="!isSubmitting">Submit Enquiry</span>
+            <span *ngIf="isSubmitting" class="loading-dots">Sending...</span>
+          </button>
+        </form>
+      </div>
+
+      <aside class="contact-info">
+        <div class="contact-info__card">
+          <h3>Contact Details</h3>
+          <ul class="contact-info__list">
+            <li>
+              <span class="contact-info__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:0110000000">011 000 0000</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-info__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@njcfirecontrol.co.za">info&#64;njcfirecontrol.co.za</a>
+              </div>
+            </li>
+            <li>
+              <span class="contact-info__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Location</strong>
+                <span>Johannesburg, Gauteng</span>
+                <small>On-site training nationwide</small>
+              </div>
+            </li>
+            <li>
+              <span class="contact-info__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </span>
+              <div>
+                <strong>Office Hours</strong>
+                <span>Mon - Fri: 08:00 - 17:00</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="accreditation-block">
+          <h3>Accreditations</h3>
+          <div class="accreditation-list">
+            <div class="accreditation-item">TETA Accredited</div>
+            <div class="accreditation-item">HPCSA Aligned</div>
+            <div class="accreditation-item">DoL Compliant</div>
+            <div class="accreditation-item">SAQCC Compliant</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>

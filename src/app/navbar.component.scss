@@ -1,0 +1,157 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  &.scrolled,
+  &.navbar--light {
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+
+    .navbar__brand-name {
+      color: #1a1a2e;
+    }
+
+    .navbar__links li a {
+      color: #444;
+
+      &:hover,
+      &.active {
+        color: #e74c3c;
+      }
+    }
+
+    .navbar__hamburger span {
+      background: #1a1a2e;
+    }
+  }
+
+  &__inner {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  &__brand-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    color: #fff;
+    transition: color 0.3s;
+
+    strong {
+      color: #e74c3c;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #e74c3c;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background: #fff;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+
+    &__links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 16px 24px 24px;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      align-items: flex-start;
+
+      &--open {
+        display: flex;
+      }
+
+      li a {
+        color: #444 !important;
+        font-size: 1rem;
+      }
+
+      li.navbar__cta-item {
+        margin-top: 8px;
+        width: 100%;
+
+        a {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+    &__hamburger {
+      display: flex;
+
+      span {
+        background: #1a1a2e;
+      }
+    }
+
+    &__brand-name {
+      color: #1a1a2e;
+    }
+  }
+}
+

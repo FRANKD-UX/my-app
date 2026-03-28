@@ -1,0 +1,147 @@
+/* ===================================================================
+   GLOBAL STYLES - styles.scss
+   This is the single entry point for all shared/global styles.
+   Component-specific styles live in their own .component.scss files.
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a2e;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+
+  @media (max-width: 768px) {
+    padding: 64px 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.section-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #e74c3c;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #666;
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+  white-space: nowrap;
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &--primary {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #e74c3c;
+
+    &:hover {
+      background: #c0392b;
+      border-color: #c0392b;
+      box-shadow: 0 4px 16px rgba(231, 76, 60, 0.35);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #e74c3c;
+    border-color: #e74c3c;
+
+    &:hover {
+      background: #e74c3c;
+      color: #fff;
+    }
+  }
+
+  &--white {
+    background: #fff;
+    color: #1a1a2e;
+    border-color: #fff;
+
+    &:hover {
+      background: #f1f5f9;
+    }
+  }
+
+  &--sm {
+    padding: 7px 16px;
+    font-size: 0.82rem;
+  }
+
+  &--lg {
+    padding: 13px 28px;
+    font-size: 0.95rem;
+  }
+}
+

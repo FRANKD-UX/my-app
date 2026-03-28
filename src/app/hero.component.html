@@ -1,0 +1,21 @@
+<section class="hero">
+  <div class="hero__bg-pattern"></div>
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">OHS Act 85 of 1993 Compliant</p>
+      <h1 class="hero__title" [innerHTML]="title"></h1>
+      <p class="hero__subtitle">{{ subtitle }}</p>
+      <div class="hero__actions">
+        <a [routerLink]="ctaLink" [fragment]="ctaFragment" class="btn btn--primary btn--lg">{{ ctaLabel }}</a>
+        <a routerLink="/contact" class="btn btn--outline btn--lg">Enquire Now</a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <img
+        class="hero__image"
+        src="images/workplace-safety-header.png"
+        alt="NJC Fire Control workplace safety training header banner" />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,149 @@
+.course-card {
+  --accent: #e74c3c;
+
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #d7e2ec;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 28%, #d7e2ec);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+
+    .course-card__arrow {
+      color: var(--accent);
+      gap: 8px;
+    }
+  }
+
+  &__accent-bar {
+    height: 4px;
+    background: var(--accent);
+  }
+
+  &__header {
+    padding: 24px 24px 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  &__duration,
+  &__level {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  &__duration {
+    background: #f1f5f9;
+    color: #475569;
+  }
+
+  &__level {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent);
+  }
+
+  &__body {
+    padding: 20px 24px;
+    flex: 1;
+  }
+
+  &__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.65;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__footer {
+    padding: 16px 24px;
+    border-top: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__cert {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #64748b;
+
+    svg {
+      color: #27ae60;
+      flex-shrink: 0;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    transition: color 0.2s, gap 0.2s;
+    white-space: nowrap;
+  }
+}

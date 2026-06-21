@@ -34,6 +34,8 @@ jobs:
           password: ${{ secrets.HOSTAFRICA_FTP_PASSWORD }}
           port: ${{ secrets.HOSTAFRICA_FTP_PORT }}
           protocol: ftp
+          timeout: 120000
+          log-level: verbose
           local-dir: ./dist/my-app/browser/
           server-dir: domains/njcfirecontrol.co.za/public_html/
           exclude: |

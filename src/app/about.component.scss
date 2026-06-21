@@ -1,0 +1,138 @@
+.page-header {
+  padding: 128px 24px 72px;
+  background: linear-gradient(135deg, #8f240f 0%, #c43715 100%);
+  color: #fff;
+
+  &__inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    margin-bottom: 18px;
+  }
+
+  &__subtitle {
+    max-width: 700px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+.about-section {
+  padding: 88px 0;
+  background: #f8fafc;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  gap: 40px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-copy {
+  p:not(.section-eyebrow) {
+    color: #4a5565;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    max-width: 65ch;
+  }
+}
+
+.about-strengths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strength-card {
+  padding: 18px 20px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #e6edf4;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.about-panel {
+  background: #fff;
+  border: 1px solid #e6edf4;
+  border-radius: 24px;
+  padding: 28px;
+  align-self: start;
+
+  h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 18px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: grid;
+    gap: 12px;
+  }
+
+  li {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f8fafc;
+    color: #425466;
+  }
+}
+
+.objectives-section {
+  padding: 96px 0;
+  background: #fff;
+}
+
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.objective-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff5f1 0%, #ffffff 100%);
+  border: 1px solid #f3d4ca;
+
+  &__index {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    color: #e74c3c;
+    margin-bottom: 14px;
+  }
+
+  p {
+    margin: 0;
+    color: #4a5565;
+    line-height: 1.7;
+  }
+}

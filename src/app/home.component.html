@@ -51,6 +51,41 @@
   </div>
 </section>
 
+<section class="section services-section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">Beyond Training</p>
+      <h2 class="section-title">Fire Safety Services</h2>
+      <p class="section-subtitle">
+        The company offering now includes the service line from your image as a proper part of the site structure, not just a footer-style text block.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let service of services">
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </article>
+    </div>
+
+    <div class="services-summary">
+      <div class="services-summary__panel">
+        <p class="section-eyebrow">Our Products</p>
+        <h3>Need equipment as well?</h3>
+        <p>Browse the new products page for extinguishers, hose reels, hydrants, blankets, smoke detectors, first aid kits, signage, and supporting items.</p>
+        <a routerLink="/products" class="btn btn--outline">View Products</a>
+      </div>
+
+      <div class="services-summary__panel">
+        <p class="section-eyebrow">About Us</p>
+        <h3>Why this business exists</h3>
+        <p>The company objectives now live in a dedicated About page so the business story, standards, and positioning are easier to understand.</p>
+        <a routerLink="/about" class="btn btn--primary">Read About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="container">
     <div class="cta-banner">
@@ -60,7 +95,7 @@
       </div>
       <div class="cta-banner__actions">
         <a routerLink="/contact" class="btn btn--primary btn--lg">Get a Quote</a>
-        <a href="tel:0110000000" class="btn btn--white btn--lg">Call Us Now</a>
+        <a href="tel:0606021056" class="btn btn--white btn--lg">Call Us Now</a>
       </div>
     </div>
   </div>

@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   courses: Course[] = [];
 
   heroTitle = 'Workplace Safety Training <em>That Works</em>';
-  heroSubtitle = 'Accredited OHS training for South African workplaces. From fire fighting to forklift operation - we certify your team and keep your business compliant.';
+  heroSubtitle = 'Accredited OHS training for South African workplaces. From fire fighting to forklift operation, we certify your team and keep your business compliant.';
 
   whyUsItems = [
     {
@@ -42,10 +42,32 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+  services = [
+    {
+      title: 'Fire Equipment Sales And Maintenance',
+      description: 'Supply, inspect, and maintain core fire safety equipment so workplaces stay ready for audits and emergencies.'
+    },
+    {
+      title: 'Fire Risk Assessment',
+      description: 'Assess operational risk areas and identify practical actions that improve prevention and response capability.'
+    },
+    {
+      title: 'Basic Fire Training',
+      description: 'Deliver practical fire response training that aligns with the wider accredited training offer on the site.'
+    },
+    {
+      title: 'Alarm And Detection Systems',
+      description: 'Support detection-focused setups that strengthen early warning and improve incident response time.'
+    },
+    {
+      title: 'Fire Proofing',
+      description: 'Provide supporting fire protection work for facilities that need stronger passive safety measures.'
+    }
+  ];
+
   constructor(private readonly courseService: CourseService) {}
 
   ngOnInit(): void {
     this.courses = this.courseService.getCourses();
   }
 }
-

@@ -6,8 +6,8 @@
       <h1 class="hero__title" [innerHTML]="title"></h1>
       <p class="hero__subtitle">{{ subtitle }}</p>
       <div class="hero__actions">
-        <a [routerLink]="ctaLink" [fragment]="ctaFragment" class="btn btn--primary btn--lg">{{ ctaLabel }}</a>
-        <a routerLink="/contact" class="btn btn--outline btn--lg">Enquire Now</a>
+        <a [routerLink]="ctaLink" [fragment]="ctaFragment" class="btn btn--lg hero__btn hero__btn--primary">{{ ctaLabel }}</a>
+        <a routerLink="/contact" class="btn btn--lg hero__btn hero__btn--secondary">Enquire Now</a>
       </div>
     </div>
 

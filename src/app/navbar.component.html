@@ -13,7 +13,9 @@
     <ul class="navbar__links" [class.navbar__links--open]="isMobileMenuOpen">
       <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
       <li><a routerLink="/" fragment="courses">Courses</a></li>
-      <li><a routerLink="/" fragment="why-us">Why Us</a></li>
+      <li><a routerLink="/" fragment="services">Services</a></li>
+      <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
       <li><a routerLink="/contact">Contact</a></li>
       <li class="navbar__cta-item">
         <a routerLink="/contact" class="btn btn--primary btn--sm">Enquire Now</a>
@@ -27,4 +29,3 @@
     </button>
   </div>
 </nav>
-

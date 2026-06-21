@@ -1,0 +1,58 @@
+<div class="about-page">
+  <section class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">About NJC Fire Control</p>
+      <h1 class="page-header__title">Safety, training, and fire protection built around real workplace risk.</h1>
+      <p class="page-header__subtitle">
+        NJC Fire Control combines accredited training with practical fire safety services so businesses can stay compliant, protect staff, and respond confidently in emergencies.
+      </p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container about-grid">
+      <div class="about-copy">
+        <p class="section-eyebrow">Who We Are</p>
+        <h2 class="section-title">A practical partner for workplace readiness</h2>
+        <p>
+          The site is positioned around one clear promise: provide dependable fire and occupational safety support that helps organisations operate safely without sacrificing practicality.
+        </p>
+        <p>
+          That includes accredited courses, equipment-related services, and the documentation businesses need when compliance, inspections, and internal standards matter.
+        </p>
+
+        <div class="about-strengths">
+          <div class="strength-card" *ngFor="let strength of strengths">{{ strength }}</div>
+        </div>
+      </div>
+
+      <aside class="about-panel">
+        <p class="section-eyebrow">Where We Work</p>
+        <h3>Supported environments</h3>
+        <ul>
+          <li *ngFor="let sector of sectors">{{ sector }}</li>
+        </ul>
+        <a routerLink="/contact" class="btn btn--primary">Request a Quote</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="objectives-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Objectives</p>
+        <h2 class="section-title">Quality and consistency are the operating standard</h2>
+        <p class="section-subtitle">
+          These objectives come from the business direction you wanted integrated into the site and now sit under the company story instead of being isolated on the home page.
+        </p>
+      </div>
+
+      <div class="objectives-grid">
+        <article class="objective-card" *ngFor="let objective of objectives; let i = index">
+          <span class="objective-card__index">0{{ i + 1 }}</span>
+          <p>{{ objective }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>

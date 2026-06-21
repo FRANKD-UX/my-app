@@ -42,7 +42,7 @@ export class CourseService {
       subtitle: 'Counterbalance & Reach Truck Training',
       description: 'Comprehensive forklift operator training designed to meet OHS Act requirements. Covers pre-operation inspection, load handling, stability principles, and safe workplace navigation.',
       icon: 'forklift',
-      accentColor: '#f39c12',
+      accentColor: '#d9481c',
       duration: '3 Days',
       level: 'Operator Certification',
       certification: 'TETA Accredited Certificate',
@@ -73,7 +73,7 @@ export class CourseService {
       subtitle: 'Lifting Machinery & Rigging Safety',
       description: 'Accredited overhead crane and hoist operator training covering safe lifting practices, rigging fundamentals, load control, and compliance with the Driven Machinery Regulations.',
       icon: 'crane',
-      accentColor: '#2980b9',
+      accentColor: '#b53112',
       duration: '2 Days',
       level: 'Operator Certification',
       certification: 'DoL / DMR Compliant Certificate',
@@ -104,7 +104,7 @@ export class CourseService {
       subtitle: 'Emergency Medical Response',
       description: 'HPCSA-aligned first aid training that empowers employees to provide immediate life-saving assistance before emergency services arrive. Available at Level 1, 2, and 3.',
       icon: 'medical',
-      accentColor: '#27ae60',
+      accentColor: '#c43715',
       duration: '3 Days (Level 1)',
       level: 'HPCSA Level 1 / 2 / 3',
       certification: 'HPCSA Recognised Certificate',
@@ -135,7 +135,7 @@ export class CourseService {
       subtitle: 'OHS Act Awareness & Compliance',
       description: 'A comprehensive overview of the Occupational Health and Safety Act (Act 85 of 1993) and its regulations. Designed for employees, supervisors, and safety representatives across all industries.',
       icon: 'shield',
-      accentColor: '#8e44ad',
+      accentColor: '#8f240f',
       duration: '1-2 Days',
       level: 'Foundation / Supervisory',
       certification: 'Accredited Attendance Certificate',
@@ -170,4 +170,3 @@ export class CourseService {
     return this.courses.find((course) => course.id === id);
   }
 }
-

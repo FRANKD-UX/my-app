@@ -26,14 +26,14 @@ jobs:
       - name: Build production website
         run: npm run build -- --configuration production --base-href /
 
-      - name: Deploy built website to Host Africa via FTPS
+      - name: Deploy built website to Host Africa via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ${{ secrets.HOSTAFRICA_FTP_SERVER }}
           username: ${{ secrets.HOSTAFRICA_FTP_USERNAME }}
           password: ${{ secrets.HOSTAFRICA_FTP_PASSWORD }}
           port: ${{ secrets.HOSTAFRICA_FTP_PORT }}
-          protocol: ftps
+          protocol: ftp
           local-dir: ./dist/my-app/browser/
           server-dir: domains/njcfirecontrol.co.za/public_html/
           exclude: |

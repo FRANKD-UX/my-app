@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Build production website
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --base-href /
 
       - name: Deploy built website to Host Africa via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
